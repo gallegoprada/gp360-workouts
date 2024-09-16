@@ -1,0 +1,21 @@
+/* styles/globals.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.required label:after {
+    color: #e32;
+    content: ' *';
+    display:inline;
+}
+
+@font-face {
+    font-family: 'Advent Pro';
+    src: url('/fonts/Advent_Pro/AdventPro-VariableFont_wdth,wght.ttf') format('truetype');
+    /* Add more src lines if you have different font weights or styles */
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
