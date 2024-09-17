@@ -1,7 +1,7 @@
 
 import EditButton from "./EditButton";
-import { createClient } from "@/app/utils/supabase/server";
-import { getMaterialPhoto } from "../data/materiales/actions";
+import { createClient } from "@/utils/supabase/server";
+import { getMaterialPhoto } from "../app/data/materiales/actions";
 
 export default async function MaterialesList() {
     const supabase = createClient();

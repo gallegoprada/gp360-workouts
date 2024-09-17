@@ -1,5 +1,5 @@
 
-import { createClient } from "@/app/utils/supabase/server";
+import { createClient } from "@/utils/supabase/server";
 import EjercicioCard from "./EjercicioCard";
 
 export default async function EjerciciosList() {

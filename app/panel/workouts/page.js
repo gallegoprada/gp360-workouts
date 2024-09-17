@@ -1,8 +1,8 @@
 
 import Link from "next/link";
-import Header from "../../components/Header";
-import WorkoutsList from "../../components/WorkoutsList";
-import Cabecera from "@/app/components/Cabecera";
+import Header from "/components/Header";
+import WorkoutsList from "/components/WorkoutsList";
+import Cabecera from "@/components/Cabecera";
 
 export default async function Workouts() {   
 

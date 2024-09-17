@@ -1,6 +1,6 @@
 'use client'
 import React, { useEffect, useState } from 'react';
-import { getMaterialById, insertMaterial, updateMaterial, getMaterialPhoto } from '../data/materiales/actions';
+import { getMaterialById, insertMaterial, updateMaterial, getMaterialPhoto } from '../app/data/materiales/actions';
 import { toast } from "react-toastify";
 
 export default function MaterialForm({ materialId }) {

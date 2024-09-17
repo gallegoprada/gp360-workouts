@@ -1,7 +1,8 @@
+"use client";
 
-import Header from "../components/Header";
-import Cabecera from "../components/Cabecera";
-import PanelCard from "../components/PanelCard";
+import Header from "/components/Header";
+import Cabecera from "/components/Cabecera";
+import PanelCard from "/components/PanelCard";
 
 export default async function PanelAdministracion() {
 

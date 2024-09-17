@@ -1,8 +1,8 @@
 
 import Link from "next/link";
-import Header from "../../components/Header";
-import Cabecera from "@/app/components/Cabecera";
-import MaterialesList from "@/app/components/MaterialesList";
+import Header from "/components/Header";
+import Cabecera from "@/components/Cabecera";
+import MaterialesList from "@/components/MaterialesList";
 
 export default async function Materiales() {   
 

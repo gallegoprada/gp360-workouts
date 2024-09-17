@@ -1,5 +1,7 @@
-import EjercicioForm from "../../../components/EjercicioForm";
-import Header from "../../../components/Header";
+"use client";
+
+import EjercicioForm from "/components/EjercicioForm";
+import Header from "/components/Header";
 
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';

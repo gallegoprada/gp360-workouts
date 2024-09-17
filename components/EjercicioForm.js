@@ -1,8 +1,8 @@
 'use client'
 import React, { useEffect, useState } from 'react';
-import { getEjercicioById, insertEjercicio, updateEjercicio, fetchCategories, fetchSubcategories } from '../data/ejercicios/actions';
+import { getEjercicioById, insertEjercicio, updateEjercicio, fetchCategories, fetchSubcategories } from '../app/data/ejercicios/actions';
 import { toast } from "react-toastify";
-import { divClass, sectionClass, headingClass, labelClass, inputClass, buttonClass } from '../constants/Form';
+import { divClass, sectionClass, headingClass, labelClass, inputClass, buttonClass } from '../app/constants/Form';
 
 export default function EjercicioForm({ ejercicioId }) {    
     const [submitting, setSubmitting] = useState(false);

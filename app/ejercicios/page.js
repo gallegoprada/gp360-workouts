@@ -1,7 +1,7 @@
 
-import Header from "../components/Header";
-import EjerciciosCardList from "../components/EjerciciosCardList";
-import Cabecera from "../components/Cabecera";
+import Header from "/components/Header";
+import EjerciciosCardList from "/components/EjerciciosCardList";
+import Cabecera from "/components/Cabecera";
 
 export default async function Ejercicios() {   
 

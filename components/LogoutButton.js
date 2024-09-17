@@ -1,6 +1,6 @@
 'use client'
 
-import { logout } from "../logout/actions"
+import { logout } from "../app/logout/actions"
 
 export default function LogoutButton () {
     return (

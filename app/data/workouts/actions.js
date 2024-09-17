@@ -1,19 +1,15 @@
 'use server'
 
-import { createClient } from "@/app/utils/supabase/server";
+import { SupabaseClient, useSupabaseClient } from '@supabase/auth-helpers-nextjs'
+import { Database } from '/supabase-client-helper/Database'
 import { revalidatePath } from "next/cache";
 
 export async function fetchSectionTypes() {
-    const supabase = createClient();
-    const { data } = await supabase.auth.getUser();
-
-    const user = data.user;
-    if (!user) {
-        throw Error('Un usuario debe estar autenticado');
-    }
+    const supabaseClient = useSupabaseClient<Database>();
+    
     try {
         // Fetch categories where deprecar is false
-        const { data, error } = await supabase
+        const { data, error } = await supabaseClient
             .from('tipo_seccion')
             .select('*')
             .eq('deprecar', false)
@@ -31,16 +27,11 @@ export async function fetchSectionTypes() {
 };
 
 export async function fetchDurationTypes() {
-    const supabase = createClient();
-    const { data } = await supabase.auth.getUser();
+    const supabaseClient = useSupabaseClient<Database>();
 
-    const user = data.user;
-    if (!user) {
-        throw Error('Un usuario debe estar autenticado');
-    }
     try {
         // Fetch categories where deprecar is false
-        const { data, error } = await supabase
+        const { data, error } = await supabaseClient
             .from('tipo_duracion_workout')
             .select('*')
             .eq('deprecar', false)
@@ -58,16 +49,11 @@ export async function fetchDurationTypes() {
 };
 
 export async function fetchEjercicios() {
-    const supabase = createClient();
-    const { data } = await supabase.auth.getUser();
+    const supabaseClient = useSupabaseClient<Database>();
 
-    const user = data.user;
-    if (!user) {
-        throw Error('Un usuario debe estar autenticado');
-    }
     try {
         // Fetch categories where deprecar is false
-        const { data, error } = await supabase
+        const { data, error } = await supabaseClient
             .from('ejercicio')
             .select('*')
             .eq('deprecar', false)

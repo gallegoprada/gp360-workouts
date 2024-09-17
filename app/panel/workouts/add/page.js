@@ -1,9 +1,11 @@
-import WorkoutForm from "../../../components/WorkoutForm";
-import Header from "../../../components/Header";
+"use client";
+
+import WorkoutForm from "./components/WorkoutForm";
+import Header from "/components/Header";
 
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-import Cabecera from "@/app/components/Cabecera";
+import Cabecera from "@/components/Cabecera";
 
 export default function addWorkout() {
     return (

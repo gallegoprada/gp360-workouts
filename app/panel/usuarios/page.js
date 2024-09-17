@@ -1,8 +1,8 @@
 
 import Link from "next/link";
-import Header from "../../components/Header";
-import Cabecera from "@/app/components/Cabecera";
-import UsuariosList from "../../components/UsuariosList";
+import Header from "/components/Header";
+import Cabecera from "@/components/Cabecera";
+import UsuariosList from "/components/UsuariosList";
 
 export default async function Usuarios() {   
 

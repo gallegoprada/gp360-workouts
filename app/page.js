@@ -1,15 +1,17 @@
+"use client";
 
-
-import Header from "./components/Header";
+import Header from "/components/Header";
 import "/styles/globals.css";
-import MainMenu from "./components/MainMenu";
-//import { createClient } from "./utils/supabase/server";
+import MainMenu from "/components/MainMenu";
+// import { createBrowserSupabaseClient } from '../supabase-client-helper/createBrowserSupabaseClient'
+// import { SessionContextProvider } from '@supabase/auth-helpers-nextjs'
+
+// const supabaseClient = createBrowserSupabaseClient({
+//   supabaseUrl: process.env.NEXT_PUBLIC_SUPABASE_URL,
+//   supabaseKey: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
+// })
 
 async function Home() {
-  /*
-  const supabase = createClient();
-  const { data } = await supabase.auth.getUser();
-  */
   return (
     <>
       <Header />

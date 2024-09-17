@@ -2,8 +2,8 @@
 import React, { useEffect, useState } from 'react';
 import { toast } from "react-toastify";
 import SectionDynamicForm from './SectionDynamicForm';
-import { divClass, sectionClass, headingClass, labelClass, inputClass, buttonClass } from '../constants/Form';
-import { insertWorkout, fetchDificultad, updateWorkout, getWorkoutById, deleteSeccion } from '../data/workouts/actions';
+import { divClass, sectionClass, headingClass, labelClass, inputClass, buttonClass } from '../app/constants/Form';
+import { insertWorkout, fetchDificultad, updateWorkout, getWorkoutById, deleteSeccion } from '../app/data/workouts/actions';
 
 export default function WorkoutForm({ workoutId }) {
     const [submitting, setSubmitting] = useState(false);

@@ -1,8 +1,8 @@
-import Header from "../../../components/Header";
+import Header from "/components/Header";
 
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-import MaterialForm from "../../../components/MaterialForm";
+import MaterialForm from "/components/MaterialForm";
 
 export default function addMaterial() {
     return (

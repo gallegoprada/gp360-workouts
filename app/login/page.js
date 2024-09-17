@@ -2,7 +2,7 @@
 
 import '/styles/globals.css';
 import { useState } from 'react';
-import Logo from '../components/Logo';
+import Logo from '/components/Logo';
 import { login, signup } from './actions';
 
 export default function Login() {

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { divClass, divFullClass, headingClass, labelClass, inputClass, buttonClass, ejercicioClass } from '../constants/Form';
-import { fetchEjercicios, fetchMateriales } from '../data/workouts/actions';
+import { divClass, divFullClass, headingClass, labelClass, inputClass, buttonClass, ejercicioClass } from '../app/constants/Form';
+import { fetchEjercicios, fetchMateriales } from '../app/data/workouts/actions';
 
 
 export default function EjercicioDynamicForm({ sectionIndex, onEjercicioDataChange, onExerciseDelete, initialEjercicio }) {

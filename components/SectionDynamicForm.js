@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { divClass, divFullClass, sectionClass, headingClass, labelClass, inputClass, buttonClass } from '../constants/Form';
-import { fetchSectionTypes, fetchDurationTypes, fetchIntervaloTypes, deleteEjercicio } from '../data/workouts/actions';
+import { divClass, divFullClass, sectionClass, headingClass, labelClass, inputClass, buttonClass } from '../app/constants/Form';
+import { fetchSectionTypes, fetchDurationTypes, fetchIntervaloTypes, deleteEjercicio } from '../app/data/workouts/actions';
 import EjercicioDynamicForm from './EjercicioDynamicForm';
 
 

@@ -1,35 +1,36 @@
 
 import EditButton from "./EditButton";
-import { createClient } from "@/app/utils/supabase/server";
+import { createClient } from "@/utils/supabase/server";
 
-export default async function WorkoutsList() {
+export default async function EjerciciosList() {
     const supabase = createClient();
     const { data: userData } = await supabase.auth.getUser();
     //console.log(userData)
     
-    let workoutsArray = [];
+    let ejerciciosArray = [];
 
     if (userData.user) {
-        const { data: workoutData, error } = await supabase
-        .from('workout')
+        const { data: ejercicioData, error } = await supabase
+        .from('ejercicio')
         .select(`
-            *,            
-            dificultadNombre:dificultad(dificultad)
+            *,
+            categoriaNombre:ejercicio_categoria(categoria),
+            subcategoriaNombre:ejercicio_subcategoria(subcategoria)
         `)
         .order('favorito', { ascending: false })
         .order('nombre');
 
         if (error) {
-            console.error('Error al obtener los workouts', error);
+            console.error('Error al obtener los ejercicios', error);
         }
-        
-        workoutsArray = workoutData;
+        // console.log(ejercicioData)
+        ejerciciosArray = ejercicioData;
     }
 
     let texto = '';
 
-    if (!workoutsArray.length) {
-        texto = 'No hay workouts almacenados.';
+    if (!ejerciciosArray.length) {
+        texto = 'No hay ejercicios almacenados.';
     }
 
     let cabeceraClass = "px-6 py-3 text-start text-xs font-medium text-gray-100 uppercase";
@@ -43,36 +44,44 @@ export default async function WorkoutsList() {
                 <tr>
                     <th className={cabeceraClass}>#</th>
                     <th className={cabeceraClass}>Nombre</th>
-                    <th className={cabeceraClass}>Dificultad</th>
+                    <th className={cabeceraClass}>Categoría</th>
+                    <th className={cabeceraClass}>Subcategoría</th>
+                    <th className={cabeceraClass}>Etiquetas</th>
                     <th className={cabeceraClass}></th>
                     <th className={cabeceraClass}></th>
                 </tr>
             </thead>
             <tbody>
             {
-                workoutsArray.length > 0 ? (
-                    // Render rows if workoutsArray is not empty
-                    workoutsArray.map((workout) => (
-                        <tr key={workout.id} className="hover:bg-beige-oscuro/30">
+                ejerciciosArray.length > 0 ? (
+                    // Render rows if ejerciciosArray is not empty
+                    ejerciciosArray.map((ejercicio) => (
+                        <tr key={ejercicio.id} className="hover:bg-beige-oscuro/30">
                             <td className={rowClass}>
-                                {workout.id}
+                                {ejercicio.id}
                             </td>
                             <td className={rowClass}>
-                                {workout.nombre}
+                                {ejercicio.nombre}
                             </td>
                             <td className={rowClass}>
-                                {workout.dificultadNombre.dificultad}
+                                {ejercicio.categoriaNombre.categoria}
+                            </td>
+                            <td className={rowClass}>
+                                {ejercicio.subcategoriaNombre.subcategoria}
+                            </td>
+                            <td className={rowClass}>
+                                {ejercicio.etiquetas}
                             </td>
                             <td>
                             {  
-                                workout.deprecar
+                                ejercicio.deprecar
                                     ? <span className="inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10">Deshabilitado</span>
                                     : <span className="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-red-600/10">Habilitado</span>
                             }
                             </td>
                             <td className="flex justify-end items-center">
                             { 
-                                workout.favorito
+                                ejercicio.favorito
                                 ? <span className="inline-flex items-center" ><svg xmlns="http://www.w3.org/2000/svg" className=" text-yellow-500 w-5 h-auto fill-current hover:text-yellow-600"
                                         viewBox="0 0 16 16">
                                         <path
@@ -81,14 +90,14 @@ export default async function WorkoutsList() {
                                 : ''
                             }
                             
-                                <EditButton id = {workout.id} site = "workouts" title = "workout"/>
+                                <EditButton id = {ejercicio.id} site = "ejercicios" title = "ejercicio"/>
                             </td>
                         </tr>
                     ))
                 ) : (
-                    // Render a message or alternative component if workoutsArray is empty
+                    // Render a message or alternative component if ejerciciosArray is empty
                     <tr>
-                        <td colSpan={5} className={rowClass}>{texto}</td>
+                        <td colSpan={6} className={rowClass}>{texto}</td>
                     </tr>
                 )
             }
